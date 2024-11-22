@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Amor: Darlisson e Yasmin</title>
+    <style>
+        /* Definindo as cores principais */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #ff4f58;
+            font-size: 48px;
+            margin-top: 30px;
+        }
+
+        .carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            overflow: hidden;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 1s ease;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .time-counter {
+            margin-top: 40px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .love-message {
+            margin-top: 40px;
+            font-size: 20px;
+            color: #ff4f58;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .love-message textarea {
+            width: 100%;
+            height: 150px;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ff4f58;
+            border-radius: 10px;
+            resize: none;
+        }
+
+        /* Música de Fundo */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff4f58;
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Fundo animado de aurora boreal */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://media.giphy.com/media/XuKfuF58oK4lq/giphy.gif') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -1;
+            filter: brightness(0.4);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Fundo animado da aurora boreal -->
+    <div class="background-animation"></div>
+
+    <h1>Nosso Amor: Darlisson e Yasmin</h1>
+
+    <!-- Carrossel de Imagens -->
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="foto1.jpg" alt="Foto 1">
+            <img src="foto2.jpg" alt="Foto 2">
+            <img src="foto3.jpg" alt="Foto 3">
+            <img src="foto4.jpg" alt="Foto 4">
+            <img src="foto5.jpg" alt="Foto 5">
+            <img src="foto6.jpg" alt="Foto 6">
+        </div>
+    </div>
+
+    <!-- Contagem de Tempo -->
+    <div class="time-counter" id="counter">
+        Desde que nos conhecemos:
+        <div id="days">0 dias</div>
+        <div id="timeDetails"></div>
+    </div>
+
+    <!-- Caixa de Texto de Amor -->
+    <div class="love-message">
+        <h2>Deixe um Texto de Amor:</h2>
+        <textarea id="loveText" placeholder="Sabe, o lado bom da vida é mesmo aquele que tem você ao meu lado. Não importa o que aconteça, com você, tudo fica mais bonito e mais leve. Cada dia ao seu lado é um presente, e sou tão grato por tudo o que você me faz sentir. Você é meu porto seguro, minha paz, meu abrigo. Eu te amo de uma maneira que nem sei explicar, e tenho a certeza de que esse amor só vai crescer, porque tudo que é amor, de alguma forma, me lembra você."></textarea>
+    </div>
+
+    <!-- Música do Spotify -->
+    <div class="music-player">
+        <iframe src="https://open.spotify.com/embed/track/4e1QnKjXaV5YnE6gNr5m9T" width="300" height="380" frameborder="0" allow="encrypted-media"></iframe>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+        // Defina a data de quando vocês se conheceram (ajuste conforme necessário)
+        const startDate = new Date("2022-06-23T00:00:00");  // Data de início: 23 de Junho de 2022
+
+        function updateCounter() {
+            const now = new Date();
+            const timeDiff = now - startDate;
+
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = `${days} dias`;
+            document.getElementById("timeDetails").innerHTML = `${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+        }
+
+        setInterval(updateCounter, 1000);
+
+        // Carrossel de Imagens
+        let currentIndex = 0;
+        const images = document.querySelectorAll(".carousel-images img");
+        const totalImages = images.length;
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            document.querySelector(".carousel-i

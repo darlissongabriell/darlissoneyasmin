@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darlisson e Yasmin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: black;
+        }
+
+        /* Nome do casal */
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            margin-top: 20px;
+        }
+
+        /* Carrossel de fundo com opacidade para permitir visualização do conteúdo */
+        .background-carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+            animation: changeBackground 30s infinite ease-in-out;
+        }
+
+        @keyframes changeBackground {
+            0% {
+                background-image: url('foto1.jpeg');
+            }
+            20% {
+                background-image: url('foto2.jpeg');
+            }
+            40% {
+                background-image: url('foto3.jpeg');
+            }
+            60% {
+                background-image: url('foto4.jpeg');
+            }
+            80% {
+                background-image: url('foto5.jpeg');
+            }
+            100% {
+                background-image: url('foto6.jpeg');
+            }
+        }
+
+        /* Container do conteúdo */
+        .content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Caixa de contagem regressiva */
+        .countdown-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: inline-block;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 30px;
+            font-size: 1.2em;
+            animation: slideIn 2s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .countdown-box span {
+            font-size: 2em;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        /* Música */
+        .spotify-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            max-width: 300px;
+            height: 80px;
+            margin: 0 auto;
+        }
+
+        /* Caixa de texto */
+        .text-box {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1em;
+        }
+
+        /* Botões de rolagem para cima e para baixo */
+        .scroll-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .scroll-button {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .scroll-button:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .countdown-box {
+                font-size: 1em;
+                padding: 8px;
+            }
+
+            .text-box {
+                font-size: 0.9em;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Carrossel de fundo -->
+    <div class="background-carousel"></div>
+
+    <!-- Conteúdo principal -->
+    <div class="content">
+        <!-- Nome do casal -->
+        <h1>Darlisson e Yasmin</h1>
+
+        <!-- Contagem de tempo com animação tipo relógio -->
+        <div class="countdown-box" id="countdown"></div>
+
+        <!-- Player de música do Spotify (Adicionando 3 músicas) -->
+        <div class="spotify-container">
+            <iframe src="https://open.spotify.com/embed/track/5lLKJdDPy7qbsta6d88lKE?si=b38b84281a444e1d" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://open.spotify.com/embed/track/3UStHHOyFXetR5621bKJBz?si=0eb09464a58a4304" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://open.spotify.com/embed/track/2o2xhyri4aJUtgMGkf5P0J?si=f14e329017cb4928" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- Caixa de texto de amor -->
+        <div class="text-box">
+            <p>Sabe, o lado bom da vida é mesmo aquele que tem você ao meu lado. Não importa o que aconteça, com você, tudo fica mais bonito e mais leve. Cada dia ao seu lado é um presente, e sou tão grato por tudo o que você me faz sentir. Você é meu porto seguro, minha paz, meu abrigo. Eu te amo de uma maneira que nem sei explicar, e tenho a certeza de que esse amor só vai crescer, porque tudo que é amor, de alguma forma, me lembra você.</p>
+        </div>
+    </div>
+
+    <!-- Botões de rolar para cima e para baixo -->
+    <div class="scroll-buttons">
+        <button class="scroll-button" onclick="scrollToTop()">⬆️</button>
+        <button class="scroll-button" onclick="scrollToBottom()">⬇️</button>
+    </div>
+
+    <script>
+        // Data de início do namoro (23 de junho de 2022)
+        const startDate = new Date("2022-06-23");
+
+        // Função para atualizar a contagem de tempo
+        function updateCountdown() {
+            const now = new Date();
+            const timeDiff = now - startDate;
+
+            // Calcula a diferença em anos, meses, dias, horas, minutos e segundos
+            const years = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 365));
+            const months = Math.floor((timeDiff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+            const days = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            // Atualiza o HTML com a contagem
+            document.getElementById("countdown").innerHTML = `
+                <span>${years} anos</span>
+                <span>${months} meses</span>
+                <span>${days} dias</span>
+                <span>${hours} horas</span>
+                <span>${minutes} minutos</span>
+                <span>${seconds} segundos</span>
+            `;
+        }
+
+        // Atualiza o contador a cada segundo
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Chama imediatamente ao carregar a página
+
+        // Função para rolar até o topo
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Função para rolar até o fundo
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
